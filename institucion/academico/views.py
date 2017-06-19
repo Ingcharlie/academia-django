@@ -118,7 +118,7 @@ def paralelos_periodo(request):
             # process the data in form.cleaned_data as required
             # redirect to a new URL (opcional)
             id_periodo = request.POST['periodo']
-            print id_periodo
+            print (id_periodo)
             periodo = Periodo.objects.get(pk=id_periodo)
             paralelos = Paralelo.objects.filter(la_periodo=periodo)
     # if a GET (or any other method) we'll create a blank form

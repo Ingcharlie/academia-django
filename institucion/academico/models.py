@@ -24,6 +24,9 @@ class Estudiante(models.Model):
         managed = False
         db_table = 'estudiante'
 
+    def __str__(self):
+        return "%s - %s -%s" % (self.id_estudiante, self.nombre, self.apellido)
+
     def __unicode__(self):
         return "%s - %s -%s" % (self.id_estudiante, self.nombre, self.apellido)
 
@@ -35,6 +38,9 @@ class Materia(models.Model):
     class Meta:
         managed = False
         db_table = 'materia'
+
+    def __str__(self):
+        return "%s - %s" % (self.id_materia, self.nombre)
 
     def __unicode__(self):
         return "%s - %s" % (self.id_materia, self.nombre)
@@ -50,6 +56,9 @@ class Paralelo(models.Model):
         managed = False
         db_table = 'paralelo'
 
+    def __str__(self):
+        return "%s - %s - %s" % (self.id_paralelo, self.nombre, self.la_periodo.nombre)
+
     def __unicode__(self):
         return "%s - %s - %s" % (self.id_paralelo, self.nombre, self.la_periodo.nombre)
 
@@ -63,6 +72,9 @@ class ParaleloEstudiante(models.Model):
         managed = False
         db_table = 'paralelo_estudiante'
 
+    def __str__(self):
+        return "%s - %s" % (self.la_paralelo, self.la_estudiante)
+
     def __unicode__(self):
         return "%s - %s" % (self.la_paralelo, self.la_estudiante)
 
@@ -74,6 +86,9 @@ class Periodo(models.Model):
     class Meta:
         managed = False
         db_table = 'periodo'
+
+    def __str__(self):
+        return "%s" % (self.nombre)
 
     def __unicode__(self):
         return "%s" % (self.nombre)

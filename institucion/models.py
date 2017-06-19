@@ -24,9 +24,11 @@ class Estudiante(models.Model):
         managed = False
         db_table = 'estudiante'
 
-    def __unicode__(self):
+    def __str__(self):
         return "%s - %s -%s" % (self.id_estudiante, self.nombre, self.apellido)
 
+    def __unicode__(self):
+        return "%s - %s -%s" % (self.id_estudiante, self.nombre, self.apellido)
 class Materia(models.Model):
     id_materia = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=50, blank=True, null=True)

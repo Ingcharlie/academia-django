@@ -2,7 +2,6 @@
 from django import forms
 from academico.models import * 
 
-
 class ParaleloPeriodoForm(forms.Form):
     periodo = forms.ModelChoiceField(queryset=Periodo.objects.all(), label="", initial='', widget=forms.Select(), required=True)
 
